@@ -8,6 +8,8 @@
 
 - [第一课](./docs/zh-CN/lesson1.md)
 
+> md格式文件使用 Marp for VS Code 插件可以快速导出pdf、html、pptx格式
+
 ## 贡献
 创建一个提交申请之前，请务必先阅读[贡献指南](./CONTRIBUTING.zh-CN.md)。
 

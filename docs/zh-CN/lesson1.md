@@ -1,10 +1,11 @@
 ---
-marp: true
+marp: false
 theme: gaia
 _class: lead
 paginate: true
+color: #fff
 backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.jpg')
+backgroundImage: url('http://amazjsorz.top/assets/img/bgi_wood.jpeg')
 ---
 
 # lesson1
