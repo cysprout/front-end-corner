@@ -4,7 +4,7 @@
 [English](./README.md) | **中文**
 
 ## 课程
-网站访问 https://cysprout.github.io/front-end-corner/docs/index.html
+网站访问 https://cysprout.github.io/front-end-corner/index.html
 
 - [第一课](./docs/zh-CN/lesson1.md)
 
