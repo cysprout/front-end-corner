@@ -16,7 +16,7 @@ backgroundImage: url('http://amazjsorz.top/assets/img/bgi_wood.jpeg')
 |2021-05-14 晚上|v0.9.1|
 |2021-05-21 下午|v0.9.2|
 
-## 体系
+### 体系
 
 - [软件工程]
 
@@ -73,14 +73,3 @@ backgroundImage: url('http://amazjsorz.top/assets/img/bgi_wood.jpeg')
 - 正则
 
 - 数据结构和算法
-
----
-
-
-## 贡献
-在您创建Pull Request之前，请先阅读[贡献指南](./CONTRIBUTING.zh-CN.md) 
-
-## 协议
-MIT
-
-Copyright (c) 2021-2021, cysprout
