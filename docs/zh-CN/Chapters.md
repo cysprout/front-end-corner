@@ -1,3 +1,13 @@
+---
+marp: false
+theme: gaia
+_class: lead
+paginate: true
+color: #fff
+backgroundColor: #fff
+backgroundImage: url('http://amazjsorz.top/assets/img/bgi_wood.jpeg')
+---
+
 # 章节
 
 |时间|版本|
@@ -14,7 +24,10 @@
 
 - [模式]
 
+---
+
 - [框架周边]
+
 
 - [性能]
 
@@ -26,6 +39,8 @@
 [框架周边]: ###框架周边
 [性能]: ###性能
 [工具]: ###工具
+
+---
 
 ### 内容
 
@@ -43,6 +58,8 @@
 
 - 动画
 
+---
+
 - 行为分析、图像识别
 
 - Xss、Csrf、Sql注入
@@ -56,6 +73,8 @@
 - 正则
 
 - 数据结构和算法
+
+---
 
 
 ## 贡献
