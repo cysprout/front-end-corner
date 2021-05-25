@@ -4,10 +4,10 @@ theme: gaia
 _class: lead
 paginate: true
 ---
-
-# lesson1
+# lesson1（上）
 html、css
 
+---
 - html
 超文本标记语言，HyperText Markup Language缩写形式
 
@@ -134,10 +134,4 @@ display: none;/* 元素隐藏 */
 
 [点击查看效果](../images/letter.jpeg)
 
----
-## CSS
-
-1. 特性：引入方式，权重优先级，
-2. box-sizing
-3. 盒模型，IE盒子
-4. 解决常见的CSS相关问题
+### 浏览器加载过程
