@@ -5,10 +5,12 @@ _class: lead
 paginate: true
 ---
 ### lesson1（下）
-html、css
+CSS入门
+
 
 ---
 #### CSS课程主要内容
+讲授方式：从整体到局部，从单个到多个组合，讲向后兼容
 
 1. 特性，引入方式，权重优先级
 2. 盒模型，IE盒子
@@ -17,7 +19,7 @@ html、css
 5. 解决常见的CSS相关问题
 
 ---
-#### CSS标准
+#### CSS标准、特性
 1. 定义
 是用来指定文档如何展示给用户的一门语言。
 
@@ -31,6 +33,23 @@ html、css
 
 ---
 4. 优先级
+优先级就是分配给指定的 CSS 声明的一个权重，它由 匹配的选择器中的 每一种选择器类型的 数值 决定
+
+（1）以下选择器类型的优先级是递增的：
+
+类型选择器（例如，h1）和伪元素（例如，::before）
+类选择器 (例如，.example)，属性选择器（例如，[type="radio"]）和伪类（例如，:hover）
+ID 选择器（例如，#example）。
+
+---
+（2）其他情况，
+
+给元素添加的内联样式 (例如，style="font-weight:bold") 总会覆盖外部样式表的任何样式 ，因此可看作是具有最高的优先级
+
+（3）!important例外规则
+此声明将覆盖任何其他声明。虽然，从技术上讲，!important 与优先级无关，但它与最终的结果直接相关。使用 !important 是一个坏习惯
+
+想要更形象的了解优先级关系，访问链接：https://specifishity.com/
 
 ---
 5. 默认样式
@@ -44,12 +63,19 @@ html、css
 CSS 由许多模块(modules) 构成，比如Backgrounds and Borders 就是一个模块。如果，你注意到某个属性和另外一些属性的相似点，并且它们可能确实是相同的格式。如上文中的 Backgrounds and Borders 模块 — 你会发现 background-color 和 border-color 这两个属性在逻辑上相通。并且它也确实如此。
 
 ---
-8. 浏览器加载网页中CSS参与的简化步骤
+8. 浏览器加载网页过程（CSS参与的）简化步骤
 ![浏览器加载简化步骤](../images/rendering.svg)
-更多请访问，MDN链接：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/First_steps/How_CSS_works
+更多内容，请访问链接：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/First_steps/How_CSS_works
 
 ---
 #### 盒模型
+![box-mode](../images/box-model.png)
+
+在浏览器dev-tools中：
+
+---
+
+![box-model-devtools](../images/box-model-devtools.png)
 
 ---
 #### CSS布局
@@ -66,6 +92,19 @@ CSS 由许多模块(modules) 构成，比如Backgrounds and Borders 就是一个
 1. 正常布局流
 normal flow，指的是不对页面进行任何布局控制时，浏览器默认的HTML布局方式。
 
+2.display属性
+设置元素内联、块级样式（隐藏）
+
+```css
+display: inline; /* 默认。此元素会被显示为内联元素，元素前后没有换行符 */
+display: block;  /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+display: none;/* 元素隐藏 */
+/* 其他设置，如flex等，改变正常布局流 */
+/* flex布局存在兼容性问题，更多请访问：https://www.caniuse.com/?search=flex */
+
+```
+
+---
 1. 弹性盒子
 flexbox，用于设计横向或纵向的布局
 
@@ -83,14 +122,20 @@ position，正常布局流中，默认为 static ，使用其它值会引起元�
 
 粘性定位(sticky positioning)是最后一种我们能够使用的定位方式，其他的常见定位方式如静态、相对、绝对、固定定位四种。
 
-什么是粘性定位？当一个元素被指定了position: sticky时，它会在正常布局流中滚动，直到它出现在了我们给它设定的相对于容器的位置，这时候它就会停止随滚动移动，就像它被应用了position: fixed一样。
+---
+**什么是粘性定位？**
+当一个元素被指定了position: sticky时，它会在正常布局流中滚动，直到它出现在了我们给它设定的相对于容器的位置，这时候它就会停止随滚动移动，就像它被应用了position: fixed一样。
 
 ElementUI组件库的吸顶或者吸底效果就是该属性的具体应用。
 
 ---
 #### box-sizing
-布局和包含块
+定义了 user agent 应该如何计算一个元素的总宽度和总高度
+
+盒子宽度和高度会 **加上** 设置的边框和内边距值，取决于属性设置
+- border-box    加上
+- content-box   不加上
 
 ---
 #### 浏览器兼容的问题
-访问，https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Howto
+更多内容，请访问链接：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Howto
