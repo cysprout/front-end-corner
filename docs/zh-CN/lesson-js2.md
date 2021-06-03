@@ -321,7 +321,7 @@ console.log(Counter.value()); /* logs 1 */
 举例：
 
 ---
-![chain-to-null](./images/chain-to-null.png)
+![chain-to-null](../images/chain-to-null.png)
 
 ---
 看下面的代码和输出：
@@ -333,7 +333,7 @@ Object.setPrototypeOf(c,b);
 console.log(c)
 ```
 ---
-![devtool-proto-chain](./images/devtool-proto-chain.jpg)
+![devtool-proto-chain](../images/devtool-proto-chain.jpg)
 
 ---
 如果是一个函数，如何修改原型：
@@ -394,7 +394,7 @@ if (!Object.setPrototypeOf) {
 补充：
 *下面有一张图来描述构造函数、原型和实例的关系：
 
-![prototype-chain-relationship](./images/prototype-chain-relationship.png)
+![prototype-chain-relationship](../images/prototype-chain-relationship.png)
 
 ---
 关系总结:
