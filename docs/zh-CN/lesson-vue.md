@@ -19,3 +19,11 @@ paginate: true
 
 ---
 1. 从0开始搭建Vue应用
+
+2. Vue简化版
+
+3. vue-router
+
+4. 用cli搭建Vue应用
+
+5. mock
