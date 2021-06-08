@@ -11,9 +11,7 @@ BOM模型
 #### js课程主要内容
 
 - 浏览器对象模型
-- window对象
-- window——浏览器窗口对象
-- window——global对象
+- 文档对象模型
 
 ---
 1. 浏览器对象模型
@@ -38,18 +36,18 @@ window对象是BOM的核心和载体。
 
 （1）窗口和像素
 window对象上的尺寸显示api，如
-- screen(Top|Left)
-- inner(Width|Height)
-- outer(Width|Height)
-- client(Width|Height)
-- page(X|Y)offset、scroll(X|Y)
+- screenTop、screenLeft
+- innerWidth、innerHeight
+- outerWidth、outerHeight
+- clientWidth、clientHeight
+- pageXoffset、pageYoffset、scrollX、scrollY
 
 ---
 window对象上操作窗口的api，如：
-- move(To|By) （依据浏览器而定，可能被禁用部分或者全部禁用）
-- scroll(To|By)
-- resize(To|By)
-- open|close
+- moveTo、moveBy （依据浏览器而定，可能被禁用部分或者全部禁用）
+- scrollTo、scrollBy
+- resizeTo、resizeBy
+- open、close
 
 ---
 像素比
@@ -102,18 +100,26 @@ window.abc  //同样也是2021
 （2）Dom
 Dom是HTML和XML文档的编程接口。
 
-DOM模型
+---
+![what-is-dom width:900px height:600px](./images/what-is-dom.png)
+
+---
+
+DOM 组织结构
 
 用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点(node)，每个节点都包含着对象(objects)。
 
-
-Dom API
-
-更多接口内容，请参照链接：https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model
+---
+![dom-style width:900px height:500px](./images/dom-style.jpeg)
 
 ---
-思考一下：在vue中，有diff算法用于比对虚拟节点，更新差异点到真实Dom上去，这个过程是如何比对的？
+Dom 事件流
 
-下面一张图，可以帮助你思考（深度搜索遍历）
+- 事件冒泡：从最具体的元素(文档树中最深的节点)开始触发，然后向上传播至没有那么具体的元素(文档)
 
-![diff](../images/diff.png)
+- 事件捕获：最不具体的节点 应该最先收到事件，而最具体的节点应该最后收到事件
+
+---
+![how-is-event width:900px height:500px](./images/how-is-event.jpeg)
+
+---
