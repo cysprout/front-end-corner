@@ -1,6 +1,6 @@
 const net = require('net');
 const {error, log} = require('console')
-const {appendMyData} = require('./demo-fs')
+// const {appendMyData} = require('./demo-fs')
 
 const client = net.connect(3000, 'localhost', ()=>{
     log('[Info]: c/s client connect to server at localhost:3000')
@@ -10,7 +10,7 @@ const client = net.connect(3000, 'localhost', ()=>{
 client.on('data', (data)=>{
    // 打印到终端控制台
    process.stdout.write(data);
-   appendMyData(data)
+//    appendMyData(data)
 });
 client.on('end', ()=>{
     process.stdout.write('[Info]: disconnected from server!')
@@ -28,7 +28,7 @@ process.stdin.resume();
 process.stdin.on('data', (data)=>{
     const info = `[client ${client.remoteAddress} ${new Date().toLocaleString()}]\r\n${data}`
     client.write(info);
-    appendMyData(info)
+    // appendMyData(info)
 
 })
 process.on('exit',(err)=>{
