@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue reactive</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        // vue reactive
+        const vm = new Vue({
+            el: '#app',
+            template: `<div>itemList output: {{itemList}}</div>`,
+            data: {
+                itemList: [1,2,3,4]
+            }
+        })
+
+        vm.itemList[4] = 5;
+        // vm.itemList.splice(5,0,6);
+
+        // object defineProterty
+        const obj = {
+            list: ['a','b','c']
+        }
+        Object.defineProperty(obj,'list',{
+            set (v){
+                console.log(v)
+                return v
+            },
+            // get () {
+            //     return this.list;
+            // }
+        })
+    </script>
+</body>
+</html>

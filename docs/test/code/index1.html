@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从0开始搭建Vue应用</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        abc: <input v-model="abc">
+    </div>
+    <div id="root"></div>
+    <!-- <div><a href="www.baidu.com">点击跳转</a>至下一页面，销毁当前组件</div> -->
+</body>
+<script>
+    'use strict';
+    console.log('Vue spread(0):');console.dir(window.Vue)
+    console.log('__VUE_DEVTOOLS_GLOBAL_HOOK__',window.__VUE_DEVTOOLS_GLOBAL_HOOK__)
+
+    const vm = new Vue({
+        el: "#app", // {1}
+        // template: `<div>This is a template, and abc's value is {{abc}}</div>`, // {2}
+        data: {
+            abc: 'a-b-c'
+        },
+        beforeCreate: function(){
+            console.log('1=== beforeCreate hook ===')
+            console.log('this spread in (1)beforeCreate hook:',this,`,this.abc:${this.abc}`)
+        },
+        created(){
+            console.log('2=== created hook ===')
+            console.log('this spread in (2)created hook:',this,`,this.abc:${this.abc}`)
+        },
+        // beforeMount:()=>{    // error
+        //     console.log('this in (3)arrow function:',this)
+        // },
+        // es6方法属性 http://es6-features.org/#MethodProperties
+        beforeMount(){
+            console.log('3=== beforeMount hook ===')
+        },
+        mounted(){
+            console.log('4=== mounted hook ===')
+            this.$nextTick(()=>console.log('vm equals this (4):',vm === this))
+        },
+        beforeDestory() {
+            console.log('7=== beforeDestory hook ===')
+        },
+        destoryed() {
+            console.log('8=== destoryed hook ===')
+        },
+        beforeUpdate() {
+            console.log('5=== beforeUpdate hook ===')
+        },
+        updated() {
+            console.log('6=== updated hook ===')
+        }
+    })
+    .$mount('#root') // {3}
+
+    // 第二周 JavaScript 原型知识回顾：js基本特性中的原型链，箭头函数对this行为的影响
+    
+    // 箭头函数下的 this 会作为变量一直向上级词法作用域查找
+
+    // 在Vue构造函数上的方法有：set、delete、nextTick等
+    // 在Vue原型上的方法有：
+        // $delete: ƒ Ae(e,t)
+        // $destroy: ƒ ()
+        // $emit: ƒ (e)
+        // $forceUpdate: ƒ ()
+        // $mount: ƒ (e,t)
+        // $nextTick: ƒ (e)
+        // $off: ƒ (e,t)
+        // $on: ƒ (e,n)
+        // $once: ƒ (e,t)
+        // $set: ƒ ke(e,t,n)
+        // $watch: ƒ (e,t,n)
+    // 以上原型方法通过Vue.prototype就可以查看得到
+
+    console.log('vm.__proto___ equals Vue.prototype:',vm.__proto__ === Vue.prototype)
+    console.log('Object.getPrototypeOf vm is Vue.prototype:', Object.getPrototypeOf(vm) === Vue.prototype)
+    
+</script>
+</html>
